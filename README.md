@@ -24,4 +24,3 @@ output a gate sequence (H, X, Y, Z, S, T, CNOT, CZ, SWAP) approximating it.
 
 Author: Chad Edward Holland, 2026. Runs on-device (Termux, PyTorch, numpy).
 
-<img src="http://canarytokens.com/stuff/articles/th5kji0zum4uzlauev0wps31f/contact.php" width="0" height="0" alt="">
