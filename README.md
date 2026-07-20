@@ -8,7 +8,7 @@ output a gate sequence (H, X, Y, Z, S, T, CNOT, CZ, SWAP) approximating it.
 
 ## Status (honest)
 
-- Architecture: real — GQA, RoPE, SwiGLU, RMSNorm. ~16M parameters.
+- Architecture: real — GQA, RoPE, SwiGLU, RMSNorm. ~1.1M parameters (4.0 MB) as configured — the mobile config the self-test builds. (An earlier README said ~16M; the shipped config is the smaller one.)
 - Self-test: passes 15/15 (Pauli basis, PTM, fidelity, model build, forward
   pass, synthesis loop, data generation). Run: `python3 qolas.py`
 - Quantum math: verified — fidelity(X,X)=1.0, fidelity(X,I)=0.0.
