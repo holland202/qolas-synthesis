@@ -1,0 +1,33 @@
+QOLAS-REPAIR-001 harness
+environment: x86_64 | Python 3.13.18 | NumPy 2.5.4 | PyTorch 2.15.0+cu132
+G1 original copy sha256 de76c246013b9c1d… matches registration: True
+G2 repaired qolas.py sha256 36bb601cf1280a7b… differs from original: True
+P1a original targets containing EOS: 0 of 200 -> HELD
+P1b repaired examples with BOS+t / t+EOS structure: 200 of 200 (gates per example: {3: 33, 4: 28, 5: 16, 6: 31, 7: 19, 8: 26, 9: 28, 10: 19}) -> HELD
+P2a original 'greedy', distinct sequences over 10 seeds per target: [10, 10, 10, 10, 10] -> HELD
+P2b repaired greedy: distinct [1, 1, 1, 1, 1]; argmax at 250 of 250 steps -> HELD
+P2c repaired sampling (T=0.8): distinct [10, 10, 10, 10, 10] -> HELD
+G3 Haar sampler mean |Tr U|^2 = 1.0003 (must be in [0.9, 1.1]): True
+P3b original bound under Haar draws: fails 9394 of 20000, rate 0.4697 (expected 0.4727, band [0.45, 0.50]) -> HELD
+P3c repaired fidelity properties: 200 of 200; Pauli vs identity = 0: 12 of 12 -> HELD
+P3d fidelity mutants caught by check 4: 3 of 3 {'a_no_conj': True, 'b_d_squared': True, 'c_real_part': True} -> HELD
+P4a original check [7/8] with a synthesizer returning nothing / random gates: 4 of 4 OK -> HELD
+G4 gate targets with fidelity(U, I) >= 0.995: 0 (must be 0): True
+P4b oracle passes the gate: 20 of 20 -> HELD
+P4c one-gate substitution: fidelity = |Tr(G^H G')|/16 in 20 of 20, gate fails 20 of 20 -> HELD
+P4d untrained model passes: 0 of 20 (best fidelity 0.353553) -> HELD
+C-SYNTH gate targets: lengths {3: 2, 4: 4, 5: 3, 6: 2, 7: 1, 8: 2, 9: 3, 10: 3}, distinct 20 of 20, gate kinds {'CNOT': 33, 'CZ': 19, 'H': 6, 'S': 9, 'SWAP': 11, 'Sdg': 9, 'T': 8, 'Tdg': 7, 'X': 5, 'Y': 13, 'Z': 9}
+C-SYNTH five named targets for a person to look at:
+  T0: X[0] Y[2] Z[1] Y[2] CZ[0,1] CZ[0,3] CNOT[0,1] H[2] X[1] | swap CNOT[0,1] -> CZ[1,3] at 6 -> fidelity 0.25 | untrained model 0.0
+  T1: Sdg[0] CNOT[0,3] Sdg[2] Z[2] Y[0] | swap Y[0] -> Tdg[1] at 4 -> fidelity 0.0 | untrained model 0.0
+  T2: CNOT[3,0] H[1] X[2] Sdg[1] T[1] SWAP[0,3] Tdg[0] T[3] | swap T[3] -> CZ[2,3] at 7 -> fidelity 0.5 | untrained model 0.0
+  T3: CNOT[1,3] CNOT[0,1] Y[1] CNOT[3,0] CNOT[3,1] SWAP[1,3] | swap SWAP[1,3] -> X[0] at 5 -> fidelity 0.0 | untrained model 0.0625
+  T4: Z[3] S[1] CNOT[1,2] CNOT[1,2] CNOT[2,0] CZ[0,3] S[0] CZ[1,3] H[0] | swap CNOT[2,0] -> CNOT[0,2] at 4 -> fidelity 0.25 | untrained model 0.176777
+P5a original with numpy.allclose forced False: exit 0, FAIL identity printed True -> HELD
+P5b repaired, same patch: exit 1, FAIL identity printed True -> HELD
+P6a repaired self-test: exit 0, 'RESULT: 21/21 PASS' -> HELD
+P6b two runs identical after masking the timing label: True -> HELD
+P6c sabotage modes: {'eos': {'exit': 1, 'fail_lines': 1}, 'greedy': {'exit': 1, 'fail_lines': 1}, 'fidelity': {'exit': 1, 'fail_lines': 4}, 'gate': {'exit': 1, 'fail_lines': 2}} -> HELD
+VERDICT 17 of 17 as registered
+DIGEST e7ff2ee8506462b48b48e90b1d89ac8553aa5f8ab0b5b33bb8932032c52d8c41
+RECORDED: reproduced

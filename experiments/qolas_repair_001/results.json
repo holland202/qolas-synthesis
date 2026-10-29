@@ -1,0 +1,136 @@
+{
+ "digest": "e7ff2ee8506462b48b48e90b1d89ac8553aa5f8ab0b5b33bb8932032c52d8c41",
+ "results": {
+  "P1a": {
+   "targets_with_eos": 0
+  },
+  "P1b": {
+   "examples_ok": 200,
+   "gate_count_distribution": {
+    "3": 33,
+    "4": 28,
+    "5": 16,
+    "6": 31,
+    "7": 19,
+    "8": 26,
+    "9": 28,
+    "10": 19
+   }
+  },
+  "P2a": {
+   "distinct_per_target": [
+    10,
+    10,
+    10,
+    10,
+    10
+   ]
+  },
+  "P2b": {
+   "distinct_per_target": [
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "steps_argmax": 250,
+   "steps_checked": 250
+  },
+  "P2c": {
+   "distinct_per_target": [
+    10,
+    10,
+    10,
+    10,
+    10
+   ]
+  },
+  "P3b": {
+   "fails": 9394,
+   "mean_abs_tr_sq": 1.0003,
+   "rate": 0.4697
+  },
+  "P3c": {
+   "pauli_vs_identity_zero": 12,
+   "properties_ok": 200
+  },
+  "P3d": {
+   "killed": {
+    "a_no_conj": true,
+    "b_d_squared": true,
+    "c_real_part": true
+   }
+  },
+  "P4a": {
+   "items_ok": 4
+  },
+  "P4b": {
+   "oracle_pass": 20
+  },
+  "P4c": {
+   "fidelity_matches_formula": 20,
+   "gate_fails": 20
+  },
+  "P4d": {
+   "max_fidelity": 0.353553,
+   "untrained_passes": 0
+  },
+  "P5a": {
+   "exit": 0,
+   "fail_identity": true,
+   "traceback": false
+  },
+  "P5b": {
+   "exit": 1,
+   "fail_identity": true,
+   "traceback": false
+  },
+  "P6a": {
+   "exit": 0,
+   "result": "RESULT: 21/21 PASS"
+  },
+  "P6b": {
+   "identical_after_mask": true
+  },
+  "P6c": {
+   "modes": {
+    "eos": {
+     "exit": 1,
+     "fail_lines": 1
+    },
+    "fidelity": {
+     "exit": 1,
+     "fail_lines": 4
+    },
+    "gate": {
+     "exit": 1,
+     "fail_lines": 2
+    },
+    "greedy": {
+     "exit": 1,
+     "fail_lines": 1
+    }
+   }
+  }
+ },
+ "statuses": {
+  "P1a": "HELD",
+  "P1b": "HELD",
+  "P2a": "HELD",
+  "P2b": "HELD",
+  "P2c": "HELD",
+  "P3b": "HELD",
+  "P3c": "HELD",
+  "P3d": "HELD",
+  "P4a": "HELD",
+  "P4b": "HELD",
+  "P4c": "HELD",
+  "P4d": "HELD",
+  "P5a": "HELD",
+  "P5b": "HELD",
+  "P6a": "HELD",
+  "P6b": "HELD",
+  "P6c": "HELD"
+ }
+}

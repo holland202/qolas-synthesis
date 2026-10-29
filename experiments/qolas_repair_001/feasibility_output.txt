@@ -1,0 +1,4 @@
+1. vocab_size 60: specials 4 (PAD BOS EOS UNK), gates 56 = CNOT 12, CZ 6, H 4, S 4, SWAP 6, Sdg 4, T 4, Tdg 4, X 4, Y 4, Z 4
+2. distinct ordered pairs 3080: |Tr(G^H G')|/16 max 0.923880, min 0.000000, pairs >= 0.995: 0, distinct values 11
+3. original check [4/8] bound 0.05 < f < 0.45, original sampler, N=20000, seed 20261029: fails 276 (low 276, high 0), rate 0.0138; mean |Tr Q|^2 4.0507 (Haar: 1)
+exit 0

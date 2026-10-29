@@ -1,0 +1,39 @@
+============================================================
+QOLAS v1.0 SELF-TEST (MOBILE)
+============================================================
+
+[1/8] PauliBasis
+  OK 256 ops
+  OK 16x16
+
+[2/8] GateSet
+  OK vocab>0
+  OK CNOT
+
+[3/8] PTM
+  OK 256x256
+  OK identity
+
+[4/8] Fidelity
+  OK exact=1
+  OK random
+
+[5/8] Model
+  OK params 1.1M
+  OK mem 4.0MB
+
+[6/8] Forward
+  OK shape (1, 10, 60)
+
+[7/8] Synthesis
+  OK seq
+  OK fidelity
+
+[8/8] DataGen
+  OK 50 in 4.1s (12.3/s)
+  OK shape
+
+============================================================
+RESULT: 15/15 PASS
+============================================================
+exit 0
