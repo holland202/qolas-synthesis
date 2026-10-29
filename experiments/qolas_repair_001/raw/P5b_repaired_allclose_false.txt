@@ -1,0 +1,47 @@
+============================================================
+QOLAS v1.0 SELF-TEST (MOBILE)
+============================================================
+
+[1/9] PauliBasis
+  OK 256 ops
+  OK 16x16
+
+[2/9] GateSet
+  OK vocab>0
+  OK CNOT
+
+[3/9] PTM
+  OK 256x256
+  FAIL identity
+
+[4/9] Fidelity
+  OK exact=1
+  OK X vs I
+  OK properties (50 Haar unitaries)
+
+[5/9] Model
+  OK params 1.1M
+  OK mem 4.0MB
+
+[6/9] Forward
+  OK shape (1, 10, 60)
+
+[7/9] Synthesis
+  OK seq
+  OK fidelity
+  OK greedy=argmax (50 tokens, same under 3 seeds)
+
+[8/9] Fidelity gate (threshold 0.995)
+  OK oracle passes
+  OK substitution fails
+  OK untrained model fails (best fidelity 0.462)
+
+[9/9] DataGen
+  OK 50 in 4.0s (12.6/s)
+  OK shape
+  OK EOS-terminated targets
+
+============================================================
+RESULT: 20/21 PASS
+============================================================
+exit 1

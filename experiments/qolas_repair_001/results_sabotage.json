@@ -1,0 +1,127 @@
+{
+ "digest": "a3e642c5ba5b337f84d4f3adb4ecb9e0a884022d285dde1dc577adbe1588baa7",
+ "results": {
+  "P1a": {
+   "targets_with_eos": 0
+  },
+  "P1b": {
+   "examples_ok": 0,
+   "gate_count_distribution": {}
+  },
+  "P2a": {
+   "distinct_per_target": [
+    10,
+    10,
+    10,
+    10,
+    10
+   ]
+  },
+  "P2b": {
+   "distinct_per_target": [
+    10,
+    10,
+    10,
+    10,
+    10
+   ],
+   "steps_argmax": 5,
+   "steps_checked": 250
+  },
+  "P2c": {
+   "distinct_per_target": [
+    10,
+    10,
+    10,
+    10,
+    10
+   ]
+  },
+  "P3b": {
+   "fails": 9394,
+   "mean_abs_tr_sq": 1.0003,
+   "rate": 0.4697
+  },
+  "P3c": {
+   "pauli_vs_identity_zero": 12,
+   "properties_ok": 200
+  },
+  "P3d": {
+   "killed": {
+    "a_no_conj": false,
+    "b_d_squared": true,
+    "c_real_part": true
+   }
+  },
+  "P4a": {
+   "items_ok": 4
+  },
+  "P4b": {
+   "oracle_pass": 20
+  },
+  "P4c": {
+   "fidelity_matches_formula": 20,
+   "gate_fails": 20
+  },
+  "P4d": {
+   "max_fidelity": 0.150888,
+   "untrained_passes": 0
+  },
+  "P5a": {
+   "exit": 0,
+   "fail_identity": true,
+   "traceback": false
+  },
+  "P5b": {
+   "exit": 0,
+   "fail_identity": true,
+   "traceback": false
+  },
+  "P6a": {
+   "exit": 0,
+   "result": "RESULT: 15/15 PASS"
+  },
+  "P6b": {
+   "identical_after_mask": true
+  },
+  "P6c": {
+   "modes": {
+    "eos": {
+     "exit": 0,
+     "fail_lines": 0
+    },
+    "fidelity": {
+     "exit": 0,
+     "fail_lines": 0
+    },
+    "gate": {
+     "exit": 0,
+     "fail_lines": 0
+    },
+    "greedy": {
+     "exit": 0,
+     "fail_lines": 0
+    }
+   }
+  }
+ },
+ "statuses": {
+  "P1a": "HELD",
+  "P1b": "REFUTED",
+  "P2a": "HELD",
+  "P2b": "REFUTED",
+  "P2c": "HELD",
+  "P3b": "HELD",
+  "P3c": "HELD",
+  "P3d": "REFUTED",
+  "P4a": "HELD",
+  "P4b": "HELD",
+  "P4c": "HELD",
+  "P4d": "HELD",
+  "P5a": "HELD",
+  "P5b": "REFUTED",
+  "P6a": "REFUTED",
+  "P6b": "HELD",
+  "P6c": "REFUTED"
+ }
+}
