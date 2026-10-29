@@ -33,7 +33,8 @@ FIXED_PATH = os.path.join(ROOT, "qolas.py")
 ORIG_SHA = "de76c246013b9c1d6d7b24476cdac3b2ffda43cd9c3b3bf3ddd4570415dc8b12"
 IDS = ["P1a", "P1b", "P2a", "P2b", "P2c", "P3b", "P3c", "P3d", "P4a", "P4b", "P4c", "P4d",
        "P5a", "P5b", "P6a", "P6b", "P6c"]
-RECORDED = None  # pinned after the first full run, in a separate commit: (statuses tuple, digest)
+RECORDED = (("HELD",) * 17,  # pinned after runs 1 and 2 (commit a94da43), in a separate commit
+            "e7ff2ee8506462b48b48e90b1d89ac8553aa5f8ab0b5b33bb8932032c52d8c41")
 
 
 def sha256(path):
