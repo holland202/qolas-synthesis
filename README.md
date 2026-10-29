@@ -17,7 +17,7 @@ output a gate sequence (H, X, Y, Z, S, T, CNOT, CZ, SWAP) approximating it.
 - Quantum math: tested — fidelity(U,U)=1, fidelity(X,I)=0, and phase,
   symmetry and unitary-invariance properties on 50 seeded Haar-random unitaries.
 - Repaired 2026-10-29 (QOLAS-REPAIR-001, self-tested). The earlier version
-  trained without EOS targets, sampled when asked for greedy decoding, had a
+  built training targets without EOS, sampled when asked for greedy decoding, had a
   fidelity check that failed about 1 run in 72 at random, had a synthesis check
   that could not fail, and exited 0 even when a check failed. Registration,
   harness and results: [docs/QOLAS_REPAIR_001_RESULTS.md](docs/QOLAS_REPAIR_001_RESULTS.md).

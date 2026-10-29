@@ -1,0 +1,38 @@
+name: qolas-selftest
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  selftest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install NumPy and CPU PyTorch
+        run: pip install numpy torch --index-url https://download.pytorch.org/whl/cpu --extra-index-url https://pypi.org/simple
+      - name: Record environment
+        run: python -c "import sys, platform, numpy, torch; print(platform.machine(), sys.version); print('numpy', numpy.__version__, 'torch', torch.__version__)"
+      - name: Self-test (its exit status carries the verdict)
+        run: python -B qolas.py
+      - name: Each sabotage mode must make the self-test fail
+        run: |
+          for m in eos greedy fidelity gate; do
+            if python -B qolas.py --sabotage "$m"; then
+              echo "SABOTAGE '$m' WAS NOT CAUGHT"
+              exit 1
+            fi
+          done
+      - name: QOLAS-REPAIR-001 reproduces its recorded outcome
+        run: python -B experiments/qolas_repair_001/run_qolas_repair_001.py
+      - name: QOLAS-REPAIR-001 under --sabotage must not reproduce it
+        run: |
+          if python -B experiments/qolas_repair_001/run_qolas_repair_001.py --sabotage; then
+            echo "HARNESS SABOTAGE WAS NOT CAUGHT"
+            exit 1
+          fi
